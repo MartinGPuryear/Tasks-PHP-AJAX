@@ -1,0 +1,34 @@
+body{
+	background-color: #ddd;
+	min-width: 480px;
+}
+#errors{
+	color: red;
+	font-size: 1.3em;
+	font-weight: 800;
+	margin-bottom: 10px; 
+}
+.task{
+	margin: 6px 0;
+	min-height: 25px;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+.txt-task-name{
+	padding-left: 2px;
+	padding-top: 0px;
+	vertical-align: text-top;
+}
+.txt-task-name-complete{
+	background-color: #bbb;
+	text-decoration: line-through;
+}
+.edit-task-name{
+	height: 24px;
+	max-width: 128px;
+}
+.remove-task, .edit-task-complete{
+	vertical-align: top;
+}

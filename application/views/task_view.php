@@ -10,13 +10,13 @@
 
 	<title>Task Manager</title>
 	
-	<link type="text/css" rel="stylesheet" href="<?= base_url('CodingDojo/jQueryUI/v1.10.3/themes/smoothness/jquery-UI.css') ?>" />	
-	<link type="text/css" rel="stylesheet" href="<?= base_url('CodingDojo/bootstrap-3.0.3-dist/dist/css/bootstrap.min.css') ?>" />
+	<link type="text/css" rel="stylesheet" href="<?= base_url('external/jQueryUI/v1.10.3/themes/smoothness/jquery-UI.css') ?>" />	
+	<link type="text/css" rel="stylesheet" href="<?= base_url('external/bootstrap-3.0.3-dist/dist/css/bootstrap.min.css') ?>" />
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/tasks.css') ?>" />
 
-	<script type="text/javascript" src="<?= base_url('CodingDojo/JQuery/v2.0.3/jquery.min.js') ?>"></script>
-	<script type="text/javascript" src="<?= base_url('CodingDojo/bootstrap-3.0.3-dist/dist/js/bootstrap.min.js') ?>"></script>
-	<script type="text/javascript" src="<?= base_url('CodingDojo/jQueryUI/v1.10.3/jquery-ui.js') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('external/JQuery/v2.0.3/jquery.min.js') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('external/bootstrap-3.0.3-dist/dist/js/bootstrap.min.js') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('external/jQueryUI/v1.10.3/jquery-ui.js') ?>"></script>
 
 	<script type="text/javascript">
 
@@ -121,6 +121,7 @@
 <body>
 	<div class="container">
 		<h2>My Tasks</h2>
+		<h5>(click on a task's text, to edit)</h5>
 		<div id="errors">
 			<?= $errors ?>
 		</div>

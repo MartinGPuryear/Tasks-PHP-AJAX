@@ -4,6 +4,7 @@ date_default_timezone_set("America/Los_Angeles");
 
 class Task_Model extends CI_Model
 {
+    //    Create a task with the given info; return the new ID.
     function create_task($task)
     {
         $new_id = NULL;
@@ -11,8 +12,8 @@ class Task_Model extends CI_Model
         $query = "INSERT INTO tasks (name, complete, created_at, updated_at) 
                   VALUES (?,?,?,?)";
 
-        $values = array($task['name'], 0, $now, $now);  //  all tasks will begin life not yet complete
-
+        $values = array($task['name'], 0, $now, $now);  //  All tasks begin life as not complete
+                                                        //  Could also simply make 0 the DB default.
         if ($this->db->query($query, $values))
         {
             $new_id =  $this->db->insert_id();
@@ -20,6 +21,7 @@ class Task_Model extends CI_Model
         return $new_id;
     }
 
+    //  Retrieve the task with the given ID.
     function retrieve_task($task_id)
     {
         $query = "SELECT
@@ -34,6 +36,7 @@ class Task_Model extends CI_Model
         return $this->db->query($query, $values)->row_array();
     }
 
+    //    Retrieve all tasks - incomplete and complete.  
     function retrieve_all_tasks()
     {
         $query = "SELECT
@@ -45,6 +48,7 @@ class Task_Model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
+    //    Update the task with the given info.  
     function update_task($task)
     {
         $now = date("Y-m-d, H:i:s");
@@ -61,6 +65,7 @@ class Task_Model extends CI_Model
         return $this->db->query($query, $values);
     }
 
+    //    Update the task with only the given name.  
     function update_task_name($task)
     {
         $now = date("Y-m-d, H:i:s");
@@ -76,6 +81,7 @@ class Task_Model extends CI_Model
         return $this->db->query($query, $values);
     }
 
+    //    Update the task with only the given completion state.  
     function update_task_complete($task)
     {
         $now = date("Y-m-d, H:i:s");
@@ -91,9 +97,10 @@ class Task_Model extends CI_Model
         return $this->db->query($query, $values);
     }
 
+    //    Destroy the task with the given ID.
     function destroy_task($task_id)
     {
-       $query = "DELETE FROM tasks
+       $query =  "DELETE FROM tasks
                   WHERE
                       id = ?";
         
